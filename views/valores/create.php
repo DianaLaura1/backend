@@ -6,9 +6,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Valores */
 
-$this->title = 'Create Valores';
+$this->title = 'Insertar Valores';
 $this->params['breadcrumbs'][] = ['label' => 'Valores', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="valores-create">
 
@@ -19,3 +20,8 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 </div>
+
+
+
+   
+

@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use app\models\Indicadores;
 use Yii;
 use app\models\Valores;
 use app\models\ValoresSearch;
@@ -28,6 +29,17 @@ class ValoresController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+            'access'=>[
+            'class'=>\yii\filters\AccessControl::className(),
+            'only'=>['index','view','create','update','delete'],
+            'rules'=>[
+                [
+                    'actions'=>['index','view','create','update','delete'],
+                    'allow'=>true,
+                    'roles'=>['@'],
+                ]
+            ]
+            ]
         ];
     }
 
@@ -55,6 +67,7 @@ class ValoresController extends Controller
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'indicator' => $this->findindicadores(3),
         ]);
     }
 
@@ -66,7 +79,7 @@ class ValoresController extends Controller
     public function actionCreate()
     {
 
-        $count=6;
+        $count=2;
 
         //Send at least one model to the form
         $prts = [new Valores()];
@@ -136,6 +149,15 @@ class ValoresController extends Controller
     {
         if (($model = Valores::findOne($id)) !== null) {
             return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    protected function findindicadores($id)
+    {
+        if (($indicator = Indicadores::findOne($id)) !== null) {
+            return $indicator;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }

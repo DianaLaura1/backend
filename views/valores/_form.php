@@ -12,7 +12,7 @@ use yii\widgets\DetailView;
 
 ?>
 
-<div class="valores-form" style=" max-width:100%; margin:40px auto;text-align:center">
+<div class="valores-form" style=" max-width:100%; margin:40px auto;text-align:center; color:#4B4453">
 
     <?php $form = ActiveForm::begin(); ?>
     
@@ -40,7 +40,57 @@ use yii\widgets\DetailView;
                    
         <tr>
             
-            <td><?= $form->field($valores, "[$index]ingenieria")->textInput()->label(FALSE) ?></td>
+            <td ><?= $form->field($valores, "[$index]ingenieria")->textInput()->label(FALSE) ?></td>
+            <td><?= $form->field($valores, "[$index]tipo")->textInput()->label(FALSE) ?></td>
+            <td><?= $form->field($valores, "[$index]hombres")->textInput(['maxlength' => true])->label(FALSE) ?></td> 
+            <td><?= $form->field($valores, "[$index]mujeres")->textInput(['maxlength' => true])->label(FALSE) ?></td>       
+            <td><?= $form->field($valores, "[$index]pertenecenEtnia")->textInput(['maxlength' => true])->label(FALSE) ?></td>
+            <td><?= $form->field($valores, "[$index]HabitanEnElEstado")->textInput()->label(FALSE) ?></td>
+            <td><?= $form->field($valores, "[$index]DiscapacidadMotriz")->textInput(['maxlength' => true])->label(FALSE) ?></td>  
+            <td><?= $form->field($valores, "[$index]DiscapacidadMental")->textInput(['maxlength' => true])->label(FALSE) ?></td>
+            <td><?= $form->field($valores, "[$index]DiscapacidadSensorial")->textInput()->label(FALSE) ?></td>
+            <td><?= $form->field($valores, "[$index]DiscapacidadPsicosocial")->textInput(['maxlength' => true])->label(FALSE) ?></td>
+            <td><?= $form->field($valores, "[$index]DiscapacidadComunicacion")->textInput(['maxlength' => true])->label(FALSE) ?></td>
+            <td><?= $form->field($valores, "[$index]indicadores_idindicadores")->textInput()->label(FALSE) ?></td>   
+            
+        </tr> 
+       <?php } ?>
+    </table>
+
+    <div class="form-group">
+        <?= Html::submitButton($valores->isNewRecord ? 'Guardar' : 'Update', ['class' => $valores->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    </div>
+    <?php ActiveForm::end(); ?>  
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<?php $form = ActiveForm::begin(); ?>
+    
+    <html>
+<body>
+<p>TABLA VARIABLE C</p>
+</body>
+</html>
+    <table>
+        <tr>
+            <td>Ingenieria</td>
+            <td>Tipo</td>
+            <td>Hombres</td>
+            <td>Mujeres</td>
+            <td>Pertenecen Etnia</td>
+            <td>Habitan en el Estado</td>
+            <td>Dis.Motriz</td>
+            <td>Dis.Mental</td>
+            <td>Dis.Sensorial</td>
+            <td>Dis.Psicosocial</td>
+            <td>Disc. Comunicacion</td>
+            <td>Indicador</td>
+        </tr>
+        <?php foreach ($prts as $index => $valores) { ?>
+                   
+        <tr>
+            
+            <td ><?= $form->field($valores, "[$index]ingenieria")->textInput()->label(FALSE) ?></td>
             <td><?= $form->field($valores, "[$index]tipo")->textInput()->label(FALSE) ?></td>
             <td><?= $form->field($valores, "[$index]hombres")->textInput(['maxlength' => true])->label(FALSE) ?></td> 
             <td><?= $form->field($valores, "[$index]mujeres")->textInput(['maxlength' => true])->label(FALSE) ?></td>       
@@ -59,7 +109,7 @@ use yii\widgets\DetailView;
    
 
 <div class="form-group">
-        <?= Html::submitButton($valores->isNewRecord ? 'create' : 'Update', ['class' => $valores->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($valores->isNewRecord ? 'Guardar' : 'Update', ['class' => $valores->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 
