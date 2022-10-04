@@ -20,6 +20,7 @@ class ValoresController extends Controller
     /**
      * @inheritdoc
      */
+    /*NUEVO REMPLAZAR  el behaviours*/ 
     public function behaviors()
     {
         return [
@@ -67,7 +68,6 @@ class ValoresController extends Controller
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'indicator' => $this->findindicadores(3),
         ]);
     }
 
@@ -154,12 +154,5 @@ class ValoresController extends Controller
         }
     }
 
-    protected function findindicadores($id)
-    {
-        if (($indicator = Indicadores::findOne($id)) !== null) {
-            return $indicator;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
+    
 }

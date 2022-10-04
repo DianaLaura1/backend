@@ -39,7 +39,6 @@ class Valores extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tipo', 'hombres', 'mujeres', 'pertenecenEtnia', 'HabitanEnElEstado', 'ingenieria', 'DiscapacidadMotriz', 'DiscapacidadMental', 'DiscapacidadSensorial', 'DiscapacidadPsicosocial', 'DiscapacidadComunicacion', 'indicadores_idindicadores'], 'required'],
             [['hombres', 'mujeres', 'pertenecenEtnia', 'HabitanEnElEstado', 'DiscapacidadMotriz', 'DiscapacidadMental', 'DiscapacidadSensorial', 'DiscapacidadPsicosocial', 'DiscapacidadComunicacion', 'indicadores_idindicadores'], 'integer'],
             [['tipo'], 'string', 'max' => 1],
             [['ingenieria'], 'string', 'max' => 45],

@@ -16,7 +16,7 @@ class IndicadoresController extends Controller
 {
     /**
      * @inheritdoc
-     */
+     */ /*Nuevo remplazar */
     public function behaviors()
     {
         return [
